@@ -29,7 +29,7 @@ class lamp($version='latest') {
   case $::operatingsystem {
     debian, ubuntu: {
       $ok = true
-      $apache = ['apache2', 'apache2.2-common']
+      $apache = 'apache2'
       $apache_srv = 'apache2'
       $apache_conf = '/etc/apache2/apache2.conf'
       $php = ['php5', 'php5-mysql', 'libapache2-mod-php5']
@@ -40,7 +40,7 @@ class lamp($version='latest') {
       $mysqlpw_cmd = '/usr/bin/mysqladmin -u root password wiseman || /bin/true'
       $sysconfig_conf = '/tmp/hng'
       $init_cmd = '/sbin/initctl reload-configuration'
-      $www = '/var/www/index.html'
+      $www = '/var/www/html/index.html'
     }
     centos, redhat, oel, linux: {
       $ok = true
